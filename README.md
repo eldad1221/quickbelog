@@ -4,6 +4,8 @@ This small project purpose is to add nice and clean logs to your app.
 Just import the `quickbelog.Log` class wherever you need and start using it.
 To make debugging easier by default it will include the name of the source file and line number in order to understand what code line is responsible for the output.
 
+## Usage:
+
     from quickbelog import Log
 
     Log.info(msg='This is an info message')
@@ -15,7 +17,7 @@ To make debugging easier by default it will include the name of the source file 
     except ValueError:
         quickbe.Log.exception('Something failed')
 
-Here are some examples
+## Output
 
     2022-03-14 15:54:03,411 > INFO  test_logger.py(17) method: test_basic_log_message        This is an info message
     2022-03-14 15:54:03,411 > DEBUG        test_logger.py(21) method: test_debug_message    This is a debug message
@@ -27,3 +29,4 @@ Here are some examples
         raise ValueError('Just for testing')
     ValueError: Just for testing
 
+Have fun :-)

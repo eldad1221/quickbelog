@@ -17,6 +17,9 @@ formatter = logging.Formatter(FORMAT)
 
 QUICKBE_LOG_TO_STDOUT = os.getenv('QUICKBE_LOG_TO_STDOUT', 'True')
 if QUICKBE_LOG_TO_STDOUT.upper() in ['TRUE', '1', 'YES']:
+    for handler in _root.handlers:
+        if isinstance(handler, logging.StreamHandler):
+            _root.handlers.remove(handler)
     stdout_handler = logging.StreamHandler()
     stdout_handler.setFormatter(formatter)
     _root.addHandler(stdout_handler)
